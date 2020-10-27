@@ -29,7 +29,7 @@ namespace Triangle
 
             //Button "Введите данные"
 
-            Width = 470;
+            Width = 470;  //
             Height = 400;
             txt1 = new Label();
             txt1.Text = "Введите данные";
