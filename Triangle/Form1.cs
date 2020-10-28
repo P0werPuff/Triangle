@@ -517,23 +517,23 @@ namespace Triangle
                 lView.Items[7].SubItems.Add(triangle.TriangleType); 
                 if (triangle.TriangleType == "Равносторонний")
                 {
-                    img.Image = new Bitmap("triangleFil1.png");
+                    img.Image = new Bitmap(@"..\..\Resources\triangleFil1.jpg");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 else if (triangle.TriangleType == "Равнобедренный")
                 {
-                    img.Image = new Bitmap("triangleFil2.png");
+                    img.Image = new Bitmap(@"..\..\Resources\triangleFil2.jpg");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 else if (triangle.TriangleType == "Разносторонний" 
                     && triangle.ExistTriangle == true)
                 {
-                    img.Image = new Bitmap("triangleFil3.png");
+                    img.Image = new Bitmap(@"..\..\Resources\triangleFil3.jpg");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 else
                 {
-                    img.Image = new Bitmap("none.png");
+                    img.Image = new Bitmap(@"..\..\Resources\none.png");
                 }
             }
         }
