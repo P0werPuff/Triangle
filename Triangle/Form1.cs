@@ -25,14 +25,14 @@ namespace Triangle
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); //
 
-            //Button "Введите данные"
+            //Button "Ввод данных"
 
             Width = 470;  //
             Height = 400;
             txt1 = new Label();
-            txt1.Text = "Введите данные";
+            txt1.Text = "Ввод данных";
             txt1.Size = new Size(132, 19);
             txt1.Location = new Point(13, 13);
             Controls.Add(txt1);
@@ -49,37 +49,43 @@ namespace Triangle
             txtA.Location = new Point(88, 39);
             txtA.Size = new Size(100, 20);
             Controls.Add(txtA);
-            txtA.TextChanged += TxtA_TextChanged;
+            txtA.TextChanged += 
+                TxtA_TextChanged;
 
             txtB = new TextBox();
             txtB.Location = new Point(88, 65);
             txtB.Size = new Size(100, 20);
             Controls.Add(txtB);
-            txtB.TextChanged += TxtB_TextChanged;
+            txtB.TextChanged += 
+                TxtB_TextChanged;
 
             txtC = new TextBox();
             txtC.Location = new Point(88, 91);
             txtC.Size = new Size(100, 20);
             Controls.Add(txtC);
-            txtC.TextChanged += TxtC_TextChanged;
+            txtC.TextChanged += 
+                TxtC_TextChanged;
 
             txtH = new TextBox();
             txtH.Location = new Point(88, 117);
             txtH.Size = new Size(100, 20);
             Controls.Add(txtH);
-            txtH.TextChanged += TxtH_TextChanged;
+            txtH.TextChanged += 
+                TxtH_TextChanged;
 
             txtS = new TextBox();
             txtS.Location = new Point(88, 143);
             txtS.Size = new Size(100, 20);
             Controls.Add(txtS);
-            txtS.TextChanged += TxtS_TextChanged;
+            txtS.TextChanged += 
+                TxtS_TextChanged;
 
             txtP = new TextBox();
             txtP.Location = new Point(88, 169);
             txtP.Size = new Size(100, 20);
             Controls.Add(txtP);
-            txtP.TextChanged += TxtP_TextChanged;
+            txtP.TextChanged += 
+                TxtP_TextChanged;
 
             //Button "Сторона A"
 
@@ -154,8 +160,10 @@ namespace Triangle
             lView.Size = new Size(217, 238);
             lView.Location = new Point(214, 38);
             lView.View = View.Details;
-            lView.Columns.Add("Параметр", 107, HorizontalAlignment.Left);
-            lView.Columns.Add("Значение", 106, HorizontalAlignment.Right);
+            lView.Columns.Add("Параметр", 
+            107, HorizontalAlignment.Left);
+            lView.Columns.Add("Значение", 
+            106, HorizontalAlignment.Right);
             Controls.Add(lView);
 
             img = new PictureBox();
@@ -176,13 +184,15 @@ namespace Triangle
             {
                 lView.Items.Clear();
             }
-            if (txtA.Text.Length > 0 && txtB.Text.Length > 0 && txtC.Text.Length > 0)
+            if (txtA.Text.Length > 0 && 
+                txtB.Text.Length > 0 && 
+                txtC.Text.Length > 0)
             {
 
                 //считывается значение стороны "A"
                 //считывается значение высоты "h"
                 //создал класса с названием "Triangle" с именем "triangle"
-                //добавляем соответсвующие ячейки в коллекцию items объекта listview1
+                //добавляем соответсвующие ячейки в коллекцию "Items" объекта "listview1"
                 //При нажатии на кнопку "Запуск" первый столбик заполняется нами указанными значениями
 
                 double a, b, c;
@@ -200,11 +210,9 @@ namespace Triangle
                 lView.Items.Add("Спецификатор");
 
                 //методы, которые по выводу сторон a, b ,c. Выводит из значения
-                //Item'у с индексом [i] присваивается к  значению "SubItems", содержащегося во втором столбце
                 //выводим периметр
                 //выводим значение площади
-                //Triangle.exist свойство
-                //выводим вид треугольника
+                //Вид треугольника выводим
 
                 lView.Items[0].SubItems.Add(triangle.OutputA()); 
                 lView.Items[1].SubItems.Add(triangle.OutputB()); 
@@ -215,7 +223,8 @@ namespace Triangle
                 if (triangle.ExistTriangle) { lView.Items[6].SubItems.Add("Существует"); } 
                 else lView.Items[6].SubItems.Add("Не существует");
                 lView.Items[7].SubItems.Add(triangle.TriangleType); 
-                if (triangle.TriangleType == "Равносторонний" && triangle.ExistTriangle == true)
+                if (triangle.TriangleType == "Равносторонний" 
+                    && triangle.ExistTriangle == true)
                 {
                     panel.Refresh();
                     Point p1 = new Point(10, 5);
@@ -226,7 +235,8 @@ namespace Triangle
                     gp.DrawLine(p, p2, p3);
                     gp.DrawLine(p, p3, p1);
                 }
-                else if (triangle.TriangleType == "Равнобедренный" && triangle.ExistTriangle == true)
+                else if (triangle.TriangleType == "Равнобедренный"
+                    && triangle.ExistTriangle == true)
                 {
                     panel.Refresh();
                     Point p1 = new Point(15, 5);
@@ -237,7 +247,8 @@ namespace Triangle
                     gp.DrawLine(p, p2, p3);
                     gp.DrawLine(p, p3, p1);
                 }
-                else if (triangle.TriangleType == "Разносторонний" && triangle.ExistTriangle == true)
+                else if (triangle.TriangleType == "Разносторонний" 
+                    && triangle.ExistTriangle == true)
                 {
                     panel.Refresh();
                     Point p1 = new Point(10, 5);
@@ -259,7 +270,7 @@ namespace Triangle
                 //считывается значение стороны "A"
                 //считывается значение высоты "h"
                 //создал класса с названием "Triangle" с именем "triangle"
-                //добавляем соответсвующие ячейки в коллекцию items объекта listview1
+                //добавляем соответсвующие ячейки в коллекцию "Items" объекта "listview1"
                 //При нажатии на кнопку "Запуск" первый столбик заполняется нами указанными значениями
 
                 double a, h;
@@ -276,11 +287,9 @@ namespace Triangle
                 lView.Items.Add("Спецификатор");
 
                 //методы, которые по выводу сторон a, b ,c. Выводит из значения
-                //Item'у с индексом [i] присваивается к  значению "SubItems", содержащегося во втором столбце
                 //выводим периметр
                 //выводим значение площади
-                //Triangle.exist свойство
-                //выводим вид треугольника
+                //Вид треугольника выводим
 
                 lView.Items[0].SubItems.Add(triangle.OutputA()); 
                 lView.Items[1].SubItems.Add(triangle.OutputB()); 
@@ -291,7 +300,8 @@ namespace Triangle
                 if (triangle.ExistTriangle) { lView.Items[6].SubItems.Add("Существует"); } 
                 else lView.Items[6].SubItems.Add("Не существует");
                 lView.Items[7].SubItems.Add(triangle.TriangleType); 
-                if (triangle.TriangleType == "Равносторонний" && triangle.ExistTriangle == true)
+                if (triangle.TriangleType == "Равносторонний" 
+                    && triangle.ExistTriangle == true)
                 {
                     panel.Refresh();
                     Point p1 = new Point(10, 5);
@@ -302,7 +312,8 @@ namespace Triangle
                     gp.DrawLine(p, p2, p3);
                     gp.DrawLine(p, p3, p1);
                 }
-                else if (triangle.TriangleType == "Равнобедренный" && triangle.ExistTriangle == true)
+                else if (triangle.TriangleType == "Равнобедренный"
+                    && triangle.ExistTriangle == true)
                 {
                     panel.Refresh();
                     Point p1 = new Point(15, 5);
@@ -313,7 +324,8 @@ namespace Triangle
                     gp.DrawLine(p, p2, p3);
                     gp.DrawLine(p, p3, p1);
                 }
-                else if (triangle.TriangleType == "Разносторонний" && triangle.ExistTriangle == true)
+                else if (triangle.TriangleType == "Разносторонний" 
+                    && triangle.ExistTriangle == true)
                 {
                     panel.Refresh();
                     Point p1 = new Point(10, 5);
@@ -414,7 +426,7 @@ namespace Triangle
                 //считывается значение стороны "A"
                 //считывается значение высоты "h"
                 //создал класса с названием "Triangle" с именем "triangle"
-                //добавляем соответсвующие ячейки в коллекцию items объекта listview1
+                //добавляем соответсвующие ячейки в коллекцию "Items" объекта "listview1"
                 //При нажатии на кнопку "Запуск" первый столбик заполняется нами указанными значениями
 
                 double a, b, c;
@@ -432,11 +444,9 @@ namespace Triangle
                 lView.Items.Add("Спецификатор");
 
                 //методы, которые по выводу сторон a, b ,c. Выводит из значения
-                //Item'у с индексом [i] присваивается к  значению "SubItems", содержащегося во втором столбце
                 //выводим периметр
                 //выводим значение площади
-                //Triangle.exist свойство
-                //выводим вид треугольника
+                //Вид треугольника выводим
 
                 lView.Items[0].SubItems.Add(triangle.OutputA()); 
                 lView.Items[1].SubItems.Add(triangle.OutputB()); 
@@ -447,19 +457,22 @@ namespace Triangle
                 if (triangle.ExistTriangle) { lView.Items[6].SubItems.Add("Существует"); } 
                 else lView.Items[6].SubItems.Add("Не существует");
                 lView.Items[7].SubItems.Add(triangle.TriangleType); 
-                if (triangle.TriangleType == "Равносторонний" && triangle.ExistTriangle == true)
+                if (triangle.TriangleType == "Равносторонний"
+                    && triangle.ExistTriangle == true)
                 {
-                    img.Image = new Bitmap("triangleFil1.png");
+                    img.Image = new Bitmap("triangleFil1.jpg");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
                 }
-                else if (triangle.TriangleType == "Равнобедренный" && triangle.ExistTriangle == true)
+                else if (triangle.TriangleType == "Равнобедренный" 
+                    && triangle.ExistTriangle == true)
                 {
-                    img.Image = new Bitmap("triangleFil2.png");
+                    img.Image = new Bitmap("triangleFil2.jpg");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
                 }
-                else if (triangle.TriangleType == "Разносторонний" && triangle.ExistTriangle == true)
+                else if (triangle.TriangleType == "Разносторонний"
+                    && triangle.ExistTriangle == true)
                 {
-                    img.Image = new Bitmap("triangleFil3.png");
+                    img.Image = new Bitmap("triangleFil3.jpg");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 else
@@ -472,7 +485,7 @@ namespace Triangle
                 //считывается значение стороны "A"
                 //считывается значение высоты "h"
                 //создал класса с названием "Triangle" с именем "triangle"
-                //добавляем соответсвующие ячейки в коллекцию items объекта listview1
+                //добавляем соответсвующие ячейки в коллекцию "Items" объекта "listview1"
                 //При нажатии на кнопку "Запуск" первый столбик заполняется нами указанными значениями
 
                 double a, h;
@@ -489,11 +502,9 @@ namespace Triangle
                 lView.Items.Add("Спецификатор");
 
                 //методы, которые по выводу сторон a, b ,c. Выводит из значения
-                //Item'у с индексом [i] присваивается к  значению "SubItems", содержащегося во втором столбце
                 //выводим периметр
                 //выводим значение площади
-                //Triangle.exist свойство
-                //выводим вид треугольника
+                //Вид треугольника выводим
 
                 lView.Items[0].SubItems.Add(triangle.OutputA()); 
                 lView.Items[1].SubItems.Add(triangle.OutputB()); 
@@ -514,7 +525,8 @@ namespace Triangle
                     img.Image = new Bitmap("triangleFil2.png");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
                 }
-                else if (triangle.TriangleType == "Разносторонний" && triangle.ExistTriangle == true)
+                else if (triangle.TriangleType == "Разносторонний" 
+                    && triangle.ExistTriangle == true)
                 {
                     img.Image = new Bitmap("triangleFil3.png");
                     img.SizeMode = PictureBoxSizeMode.Zoom;
